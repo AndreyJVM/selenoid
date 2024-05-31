@@ -4,7 +4,6 @@ docker network create selenoid
 ---
 ```dockerfile
 nano ./browser.json
-
 ```
 ---
 ```json
@@ -54,7 +53,19 @@ sudo docker run \
     --name selenoid \
     -p 4445:4444 \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /home/selenoid/selenoid/browser.json:/etc/selenoid/browser.json:ro \
+    -v /home/selenoid/selenoid/browsers.json:/etc/selenoid/browsers.json:ro \
     aerokube/selenoid:1.11.2 \
     -container-network=selenoid -limit 12
+```
+
+![img.png](selenoid-run-docker.png)
+
+Если на этом моменте не будет появляться запущенный контейнер, убрать опцию ```--rm```, и 
+посмотреть логи контейнера
+
+![img_1.png](selenoid-web.png)
+
+---
+```dockerfile
+mkdir -p /etc/grid-router/quota/test.xml
 ```

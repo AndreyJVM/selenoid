@@ -1,3 +1,14 @@
+### Создаем рабочую директорию
+```shell
+mkdir /home/user/nginx
+```
+---
+### Создаем `selenoid.conf` с содержимым proxy сервера
+```shell
+nano /home/user/nginx/selenoid.conf
+```
+---
+### Запускам `nginx` контейнер
 ```dockerfile
 docker run \
 --name nginx \

@@ -1,3 +1,5 @@
+### Запускаем ggr-ui
+
 ```dockerfile
 docker run \
 -d \
@@ -7,6 +9,7 @@ docker run \
 aerokube/ggr-ui
 ```
 
+### Проверяем доступность браузеров
 ```shell
 curl -s http://172.17.0.1:8888/status
 # {"browsers":{"chrome":{"120.0":{},"121.0":{}},"opera":{"105.0":{},"106.0":{}}},"pending":0,"queued":0,"total":24,"used":0}

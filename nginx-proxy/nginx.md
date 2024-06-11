@@ -15,3 +15,4 @@ sudo docker run \
 -v /home/user/nginx/:/etc/nginx/conf.d:ro \
 -d --network=host nginx
 ```
+![nginx-proxy.png](\nginx-proxy\images\nginx-proxy.png)

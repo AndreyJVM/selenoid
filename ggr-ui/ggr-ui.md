@@ -1,12 +1,12 @@
 ### Запускаем ggr-ui
 
 ```dockerfile
-docker run \
+sudo docker run \
 -d \
 --name ggr-ui \
 -p 8888:8888 \
 -v /etc/grid-router/quota/:/etc/grid-router/quota:ro \
-aerokube/ggr-ui
+aerokube/ggr-ui:1.2.0
 ```
 
 ### Проверяем доступность браузеров

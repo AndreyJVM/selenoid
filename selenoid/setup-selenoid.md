@@ -1,9 +1,10 @@
+# Перед запуском `selenoid` создаём сеть `docker`
 ```dockerfile
 docker network create selenoid
 ```
 ---
 ```dockerfile
-nano ./browser.json
+nano ./browsers.json
 ```
 ---
 ```dockerfile

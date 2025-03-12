@@ -1,16 +1,16 @@
-# Перед запуском `selenoid` создаём сеть `docker`
+### Перед запуском `selenoid` создаём сеть `docker`
 ```dockerfile
 docker network create selenoid
 ```
----
+
 ```dockerfile
 nano ./browsers.json
 ```
----
+
 ```dockerfile
 docker pull selenoid/chrome:121.0
 ```
----
+
 ```dockerfile
 sudo docker run \
     -d \
@@ -23,10 +23,9 @@ sudo docker run \
     aerokube/selenoid:1.11.2 \
     -container-network=selenoid -limit 12
 ```
-
+### Должно получится вот так:
 ![img.png](images/selenoid-run-docker.png)
 
-Если на этом моменте не будет появляться запущенный контейнер, убрать опцию ```--rm```, и 
-посмотреть логи контейнера
+### Если на этом моменте не будет появляться запущенный контейнер, убрать опцию ```--rm```, и посмотреть логи контейнера
 
 ![img_1.png](images/selenoid-web.png)

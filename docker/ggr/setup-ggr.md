@@ -9,11 +9,11 @@ sudo apt install apache2-utils -y
 
 ### Шифруем пользователя паролем с помощью утилиты `htpasswd`
 ```
-htpasswd -bc /etc/grid-router/users.htpasswd <user-name> <user-password>
+sudo htpasswd -bc /etc/grid-router/users.htpasswd it Qwerty123
 ```
 ### Создаем файл содержащий список `selenoid` контейнеров
 ```shell
-nano /etc/grid-router/quota/<user-name>.xml
+sudo nano /etc/grid-router/quota/it.xml
 ```
 
 ### Запускаем контейнер `ggr`
@@ -25,11 +25,11 @@ sudo docker run \
 -p 4444:4444 \
 aerokube/ggr:1.7.2 \
 -guests-allowed \
--guests-quota "<user-name>" \
+-guests-quota "it" \
 -verbose \
 -quotaDir /etc/grid-router/quota
 ```
 
 ```shell
-apt purge apache2-utils -y
+sudo apt purge apache2-utils -y
 ```

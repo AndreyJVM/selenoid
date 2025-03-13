@@ -1,6 +1,9 @@
-### Перед запуском `selenoid` создаём сеть `docker`
+### Для запуска двух selenoid необходимо создать две сети
 ```dockerfile
-docker network create selenoid
+sudo docker network create selenoid
+```
+```dockerfile
+sudo docker network create selenoid1
 ```
 
 ```dockerfile
@@ -8,7 +11,7 @@ nano ./browsers.json
 ```
 
 ```dockerfile
-docker pull selenoid/chrome:121.0
+sudo docker pull selenoid/chrome:121.0
 ```
 
 ```dockerfile
@@ -19,10 +22,24 @@ sudo docker run \
     --name selenoid \
     -p 4445:4444 \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /home/selenoid/selenoid/browsers.json:/etc/selenoid/browsers.json:ro \
+    -v /home/it/browsers.json:/etc/selenoid/browsers.json:ro \
     aerokube/selenoid:1.11.2 \
     -container-network=selenoid -limit 12
 ```
+
+```dockerfile
+sudo docker run \
+    -d \
+    --rm \
+    --network selenoid1 \
+    --name selenoid1 \
+    -p 4446:4444 \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /home/it/browsers.json:/etc/selenoid/browsers.json:ro \
+    aerokube/selenoid:1.11.2 \
+    -container-network=selenoid1 -limit 12
+```
+
 ### Должно получится вот так:
 ![img.png](images/selenoid-run-docker.png)
 

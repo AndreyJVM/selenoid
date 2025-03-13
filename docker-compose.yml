@@ -3,7 +3,7 @@ version: '3.8'
 services:
   selenoid1:
     image: aerokube/selenoid:1.11.2
-    container_name: selenoid
+    container_name: selenoid1
     ports:
       - "4445:4444"
     networks:
@@ -18,7 +18,7 @@ services:
 
   selenoid2:
     image: aerokube/selenoid:1.11.2
-    container_name: selenoid
+    container_name: selenoid2
     ports:
       - "4446:4444"
     networks:
@@ -52,7 +52,8 @@ services:
       -verbose
       -quotaDir /etc/grid-router/quota
     depends_on:
-      - selenoid
+      - selenoid1
+      - selenoid2
     restart: always
 
   ggr-ui:
@@ -75,7 +76,7 @@ services:
       - "8080:8080"
     networks:
       - selenoid
-    command: --selenoid-uri http://ggr-ui:8888
+    command: --selenoid-uri http://172.18.0.6:8888
     depends_on:
       - ggr-ui
     restart: always
@@ -95,7 +96,7 @@ services:
     restart: always
 
 networks:
-  selenoid:
+  selenoid1:
     driver: bridge
 
 volumes:

@@ -36,7 +36,6 @@ mkdir -p /etc/grid-router/quota
 
 # Копирование файлов в нужные места
 cp "${BASE_DIR}/browsers.json" ./browsers.json
-cp "${BASE_DIR}/.env" ./.env
 cp "${BASE_DIR}/ggr-it-user.xml" /etc/grid-router/quota/ggr-it-user.xml
 cp "${BASE_DIR}/selenoid.conf" /home/user/nginx/selenoid.conf
 
@@ -61,9 +60,7 @@ echo "Все файлы успешно скопированы."
 sudo apt update
 sudo apt install -y apache2-utils
 
-# Создание файла users.htpasswd
-source ./.env
-htpasswd -bc /etc/grid-router/users.htpasswd ${HTPASSWD_USER} ${HTPASSWD_PASSWORD}
+htpasswd -bc /etc/grid-router/users.htpasswd ggr-it-user Qwerty123
 
 # Удаление apache2-utils (если больше не нужен)
 sudo apt purge -y apache2-utils

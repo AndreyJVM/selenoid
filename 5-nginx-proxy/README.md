@@ -11,6 +11,7 @@ nano /home/it/nginx/selenoid.conf
 ### Запускаем контейнер `nginx`
 ```dockerfile
 sudo docker run \
+--rm \
 --name nginx \
 -v /home/it/nginx/:/etc/nginx/conf.d:ro \
 -d --network=host nginx

@@ -19,6 +19,7 @@ sudo nano /etc/grid-router/quota/it.xml
 ### Запускаем контейнер `ggr`
 ```dockerfile
 sudo docker run \
+--rm \
 -d \
 --name ggr \
 -v /etc/grid-router/:/etc/grid-router:ro \

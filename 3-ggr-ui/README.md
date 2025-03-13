@@ -2,6 +2,7 @@
 
 ```dockerfile
 sudo docker run \
+--rm \
 -d \
 --name ggr-ui \
 -p 8888:8888 \

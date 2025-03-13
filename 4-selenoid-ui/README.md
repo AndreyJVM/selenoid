@@ -1,4 +1,4 @@
-### Через `docker inspect ggr-ui` находим `gateway` и подставляем в `--selenoid-uri` 
+### Через `docker network inspect bridge | grep Gateway` и подставляем в `--selenoid-uri http://GATEWAY:8888` 
 
 ```dockerfile
 sudo docker run \

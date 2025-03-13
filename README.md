@@ -4,12 +4,6 @@
 
 2. **Файл** `browsers.json`: Предполагается, что файл `browsers.json` находится в той же директории, что и `docker-compose.yml`. Если файл находится в другом месте, укажите правильный путь в `volumes`.
 
-3. **Загрузка образа** `selenoid/chrome:121.0`: Образ будет загружен автоматически при запуске `docker-compose up`.
-
-4. **Запуск Selenoid:** Контейнер Selenoid будет запущен с указанными параметрами, включая подключение к сети `selenoid` и использование файла `browsers.json`.
-
-5. Создайте файл `browsers.json` в той же директории, что и `docker-compose.yml`, с содержимым, которое вы указали.
-
 ### Service ggr
 
 1. Создание директорий и установка `apache2-utils`:
@@ -50,3 +44,7 @@ mkdir /home/it/nginx
 nano /home/it/nginx/selenoid.conf
 ```
 
+### Запуск docker compose
+```shell
+sudo docker compose up -d
+```

@@ -1,5 +1,5 @@
 ### Для запуска двух selenoid необходимо создать две сети
-
+### Для каждого `seleboid` необходимо создать свою `docker` сеть, в примере поднимается два `selenoid`, соответственно создаём две сети
 ```dockerfile
 sudo docker network create selenoid
 ```
@@ -7,14 +7,17 @@ sudo docker network create selenoid
 sudo docker network create selenoid1
 ```
 
+### Содержимое для файла находиться в данной папке с названием `browsers.json`
 ```dockerfile
 nano ./browsers.json
 ```
 
+### Загружаем образы нужных браузеров, эти версии должны быть указаны в `browsers.json`
 ```dockerfile
 sudo docker pull selenoid/chrome:121.0
 ```
 
+### Проверяем путь из которого копируем `browsers.json`:  -v `/home/it/browsers.json`:/etc/selenoid/browsers.json:ro 
 ```dockerfile
 sudo docker run \
     -d \
@@ -41,9 +44,4 @@ sudo docker run \
     -container-network=selenoid1 -limit 12
 ```
 
-### Должно получится вот так:
-![img.png](images/selenoid-run-docker.png)
-
-### Если на этом моменте не будет появляться запущенный контейнер, убрать опцию ```--rm```, и посмотреть логи контейнера
-
-![img_1.png](images/selenoid-web.png)
+### Если Вы всё сделали правильно, то в `docker ps` появиться сообщение об успешном старте `selenoid`

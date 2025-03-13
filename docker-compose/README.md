@@ -1,5 +1,5 @@
 ### Service selenoid
-![Selenoid-schema.png](img%2FSelenoid-schema.png)
+![Selenoid-schema.png](..%2Fimg%2FSelenoid-schema.png)
 
 1. **Сеть** `selenoid`: Создается автоматически при запуске `docker-compose up`.
 

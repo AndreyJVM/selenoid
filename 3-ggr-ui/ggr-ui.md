@@ -14,3 +14,5 @@ aerokube/ggr-ui:1.2.0
 curl -s http://172.17.0.1:8888/status
 # {"browsers":{"chrome":{"120.0":{},"121.0":{}},"opera":{"105.0":{},"106.0":{}}},"pending":0,"queued":0,"total":24,"used":0}
 ```
+
+![curl-test.png](..%2Fimg%2Fcurl-test.png)

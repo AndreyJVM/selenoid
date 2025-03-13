@@ -1,3 +1,5 @@
+### Через `docker inspect ggr-ui` находим `gateway` и подставляем в `--selenoid-uri` 
+
 ```dockerfile
 sudo docker run \
 -d \

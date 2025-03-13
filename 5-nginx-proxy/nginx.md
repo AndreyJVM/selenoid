@@ -2,12 +2,12 @@
 ```shell
 mkdir /home/user/nginx
 ```
----
+
 ### Создаем `selenoid.conf` с содержимым proxy сервера
 ```shell
 nano /home/user/nginx/selenoid.conf
 ```
----
+
 ### Запускам `nginx` контейнер
 ```dockerfile
 sudo docker run \
@@ -15,4 +15,5 @@ sudo docker run \
 -v /home/user/nginx/:/etc/nginx/conf.d:ro \
 -d --network=host nginx
 ```
-![nginx-proxy.png](\nginx-proxy\images\nginx-proxy.png)
+
+![nginx-proxy.png](..%2Fimg%2Fnginx-proxy.png)
